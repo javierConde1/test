@@ -1,0 +1,13 @@
+var base = 5;
+var altura = 7;
+var diametro = 10;
+var radio = 5;
+var phi = 3.14;
+var areaRectangulo = base * altura;
+var areaCirculo = phi * (radio * radio);
+var areaTriangulo = (base * altura) / 2;
+var volumenEsfera = phi * (diametro * diametro * diametro);
+console.log("El area de mi rectangulo es igual : " + areaRectangulo);
+console.log("El area de mi cirulo es igual : " + areaCirculo);
+console.log("El area de mi triangulo es igual : " + areaTriangulo);
+console.log("El volumen de mi esfera es igual : " + volumenEsfera);
