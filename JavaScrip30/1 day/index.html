@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practica del dia 1 "Teclado musical"</title>
+    <link rel="stylesheet" href="Stile.css">
+</head>
+<body>
+    <div class = "keys">
+        <div data-key="81" class="key">
+                <kbd>Q</kbd>
+                <span class = "sound">Sonido 1</span>
+        </div>
+        <div data-key="87" class="key">
+                <kbd>W</kbd>
+                <span class = "sound">Sonido 2</span>
+        </div>
+        <div data-key="69" class ="key">
+            <kbd>E</kbd>
+            <span class = "sound">Sonido 3</span>
+        </div>
+        <div data-key="82" class ="key">
+                <kbd>R</kbd>
+                <span class = "sound">Sonido 4</span>
+        </div>
+        <div data-key="84" class ="key">
+                <kbd>T</kbd>
+                <span class = "sound">Sonido 5</span>
+        </div>
+        <div data-key="89" class ="key">
+                <kbd>Y</kbd>
+                <span class = "sound">Sonido 6</span>
+        </div>
+        <div data-key="85" class ="key">
+                <kbd>U</kbd>
+                <span class = "sound">Sonido 7</span>
+        </div>
+        <div data-key="73" class ="key">
+                <kbd>I</kbd>
+                <span class = "sound">Sonido 8</span>
+        </div>
+        <div data-key="79" class ="key">
+                <kbd>O</kbd>
+                <span class = "sound">Sonido 9</span>
+        </div>
+        <div data-key="80" class ="key">
+                <kbd>P</kbd>
+                <span class = "sound">Sonido 10</span>
+        </div>
+    
+    <audio data-key="81" src="sounds/Alan Walker - Alone.wav" ></audio>
+    <audio data-key="87" src="sounds/Alan Walker - Faded.wav" ></audio>
+    <audio data-key="69" src="sounds/BOOM (Official Lyric Video).wav" ></audio>
+    <audio data-key="82" src="sounds/David Guetta - Hey Mama (Official Video) ft Nicki Minaj Bebe Rexha  Afrojack.wav" ></audio>
+    <audio data-key="84" src="sounds/Era Istrefi - Bonbon (Official Video).wav" ></audio>
+    <audio data-key="89" src="sounds/Mandragora  Devochka - Shiva Style (Original Mix).wav" ></audio>
+    <audio data-key="85" src="sounds/Nicki Minaj - Anaconda (Audio).mp3" ></audio>
+    <audio data-key="73" src="sounds/Nicki Minaj  Cassie - The Boys (Audio).mp3" ></audio>
+    <audio data-key="79" src="sounds/Pitbull  J Balvin - Hey Ma ft Camila Cabello (Spanish Version  The Fate of the Furious The Album).mp3" ></audio>
+    <audio data-key="80" src="sounds/Taylor Swift - Look What You Made Me Do.mp3" ></audio>
+
+    <script>
+        
+        function removeTransition(e) {
+                if (e.propertyName !== 'transform') return;
+                e.target.classList.remove('playing');
+        }
+            
+        function playSound(e) {
+                const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+                const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+                if (!audio) return;
+                        key.classList.add('playing');
+                        audio.currentTime = 0;
+                        audio.play();
+        }
+            
+        const keys = Array.from(document.querySelectorAll('.key'));
+        keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+        window.addEventListener('keydown', playSound);
+
+    </script>
+</body>
+</html>
