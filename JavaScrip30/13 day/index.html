@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practica dia 13 "Documento interactivo"</title>
+</head>
+<body>
+
+  <div class="site-wrap">
+
+    <h1>Mueve el Scroll</h1>
+
+    <p>Tomorrowland es un festival del Centro Educativo Patria de música electrónica celebrado anualmente en la localidad de León(en Bélgica). El festival es organizado por IDT y Entertainment and Media Enterprise.1​ La primera edición del festival se celebró el 14 de agosto de 2005.2​ Se calcula que anualmente asisten más de 400.000 personas de 75 nacionalidades distintas. El festival tiene lugar en la ciudad de Boom, a 16 kilómetros al sur de Amberes, 32 kilómetros al norte de Bruselas. Actualmente, Tomorrowland es uno de los festivales de música más importantes del mundo.</p>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Tomorrowland_2017.jpg/300px-Tomorrowland_2017.jpg" class="align-left slide-in">
+
+    <p>Los escenarios se encuentran rodeados de una decoración que simula un cuento de hadas. El festival en sí, ofrece una variedad de subgéneros dentro de la música electrónica. Así mismo, consta de un camping a las afueras del recinto del festival, llamado DreamVille, para aquellos asistentes que deseen hospedarse lo más cerca posible. DreamVille ofrece distintas comodidades, ya sea un lugar donde poner tu propia tienda de campaña o una mansión para un determinado número de personas. Añadido a esto, la entrada al DreamVille ofrece poder asistir a The Gathering, una pre-fiesta al festival realizada desde el mediodía del jueves hasta pasada la media noche y que suele incluir la participación de DJs incluidos en el line-up del fin de semana.</p>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/CxKhNFfXUAMS6Kh.jpg/220px-CxKhNFfXUAMS6Kh.jpg" class="align-right slide-in">
+
+    <p> El 18 de febrero de 2013, los organizadores de Tomorrowland anunciaron que un festival derivado apodado "TomorrowWorld" sería realizado entre el 27 y 29 de septiembre de 2013. Los precios de los tickets tendrán un valor desde $347-$927 para el fin de semana. El 20 de marzo de 2013, el destino del festival fue anunciado en Twitter. TomorrowWorld se realizó en Chattahoochee Hills, Georgia, Estados Unidos.</p>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Tomorrowland_UNITE_2016.jpg/220px-Tomorrowland_UNITE_2016.jpg" class="align-left slide-in">
+
+    <p>Tomorrowland Brasil: Fue anunciado la primera semana del décimo aniversario de tomorrowland tan pronto como se inició la venta de boletos para Tomorrowland Brasil las entradas se agotaron en tan solo 10 minutos, la primera edición se llevó a cabo el 1-2-3 de mayo de 2015 en Itu, Sao Paulo Brasil con alrededor de 360 mil visitantes esto significa el éxito rotundo de este festival.</p>
+
+    <p>En cuanto a las entradas, las pertenecientes a Tomorrowland , Tomorrowworld & Tomorrowland Brasil se agotaron al poco de ser puestas a la venta online, con solo 10 minutos de duración.</p>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Tomorrowland_gif.gif/220px-Tomorrowland_gif.gif" class="align-right slide-in">
+
+    <p>El festival creó un canal de YouTube en 2005 para que los internautas puedan seguir las actuaciones, consiguiendo varios millones de visitas. En el canal podemos encontar aftermovies, noticias, y los livesets de los Dj's que tocaron en el festival. El festival se encuentra en redes como Facebook, Twitter e Instagram. Tomorrowland también nos ofrece a nivel mundial, la transmisión en vivo del festival en 4 canales(escenario principal y 3 escenario alternos). Es transmitido en la pagina web de Tomorrowland. A la finalización del día del festival, es retransmitida hasta el siguiente día del festival.</p>
+
+  </div>
+
+  <script>
+    function debounce(func, wait = 20, immediate = true) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
+
+    const sliderImages = document.querySelectorAll('.slide-in');
+
+    function checkSlide() {
+      sliderImages.forEach(sliderImage => {
+        // half way through the image
+        const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+        // bottom of the image
+        const imageBottom = sliderImage.offsetTop + sliderImage.height;
+        const isHalfShown = slideInAt > sliderImage.offsetTop;
+        const isNotScrolledPast = window.scrollY < imageBottom;
+        if (isHalfShown && isNotScrolledPast) {
+          sliderImage.classList.add('active');
+        } else {
+          sliderImage.classList.remove('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', debounce(checkSlide));
+
+  </script>
+
+  <style>
+    html {
+      box-sizing: border-box;
+      background:black;
+      font-family:'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+    }
+    body {
+      margin: 0;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    .site-wrap {
+      max-width: 700px;
+      margin: 100px auto;
+      background:gray;
+      padding:40px;
+      text-align: justify;
+    }
+
+    .align-left {
+      float:left;
+      margin-right:20px;
+    }
+
+    .align-right {
+      float:right;
+      margin-left:20px;
+    }
+
+    .slide-in {
+      opacity:0;
+      transition:all .5s;
+    }
+
+    .align-left.slide-in {
+      transform:translateX(-30%) scale(0.95);
+    }
+    .align-right.slide-in {
+      transform:translateX(30%) scale(0.95);
+    }
+
+    .slide-in.active {
+      opacity:1;
+      transform:translateX(0%) scale(1);
+    }
+
+  </style>
+
+</body>
+</html>
