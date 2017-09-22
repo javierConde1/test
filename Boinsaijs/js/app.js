@@ -1,19 +1,26 @@
-new Rect(10, 10, 100, 100)
-.addTo(stage)
-.attr('fillColor', 'cyan')
+var cuadrado = new Rect(10, 10, 100, 100);
+cuadrado.addTo(stage);
+cuadrado.fill('cyan');
+cuadrado.animate('1.5s', {
+  rotation: Math.PI*2,
+  x: 700,
+  fillColor: 'black'
+});
+var cuadrado = new Rect(10, 10, 100, 100);
+cuadrado.addTo(stage);
+cuadrado.fill('green');
+cuadrado.animate('1.5s', {
+  rotation: Math.PI*2,
+  y: 550,
+  fillColor: 'gray'
+});
 
-  /*.animate(new KeyframeAnimation('5s',{
-    from: {x:0, y:0},
-    '0.05%': {x:1000, y:0},
-    to: {x:0, y:0}
-  }))*/
-  .animate(new KeyframeAnimation('5s',{
-    from: {x:600, y:0},
-    '0.05%': {x:300, y:0},
-    to: {x:600, y:200},
-    '0.05%': {x:0, y:100},
-  }));
-
-  /*new Circ(10,10,10,100,100)
-  .addTo(stage)
-  .attr('fillColor', 'cyan');*/
+var cuadrado = new Rect(10, 10, 100, 100);
+cuadrado.addTo(stage);
+cuadrado.fill('red');
+cuadrado.animate('1.5s', {
+  rotation: Math.PI*2,
+  x: 700,
+  y:550,
+  fillColor: 'green'
+});
