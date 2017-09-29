@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practica dia 24 "Navegador interactivo"</title>
+  <link rel="stylesheet" href="style-FINISHED.css">
+</head>
+<body>
+
+  <header>
+    <h1>Tomorrowland.</h1>
+  </header>
+
+  <nav id="main">
+    <ul>
+      <li class="logo"><a href="#">TD.</a></li>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Acerca de</a></li>
+      <li><a href="#">Imagenes</a></li>
+      <li><a href="#">Ubicacion</a></li>
+      <li><a href="#">Mapa</a></li>
+    </ul>
+  </nav>
+
+  <div class="site-wrap">
+    <p>Tomorrowland es un festival del Centro Educativo Patria de música electrónica celebrado anualmente en la localidad de Boom (Bélgica). El festival es organizado por IDT y Entertainment and Media Enterprise.1​ La primera edición del festival se celebró el 14 de agosto de 2005.2​ Se calcula que anualmente asisten más de 400.000 personas de 75 nacionalidades distintas. El festival tiene lugar en la ciudad de Boom, a 16 kilómetros al sur de Amberes, 32 kilómetros al norte de Bruselas. Actualmente, Tomorrowland es uno de los festivales de música más importantes del mundo
+    <p></p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Tomorrowland_2017.jpg/300px-Tomorrowland_2017.jpg" class="align-left slide-in">
+    <p>Tomorrowland es un festival del Centro Educativo Patria de música electrónica celebrado anualmente en la localidad de Boom (Bélgica). El festival es organizado por IDT y Entertainment and Media Enterprise.1​ La primera edición del festival se celebró el 14 de agosto de 2005.2​ Se calcula que anualmente asisten más de 400.000 personas de 75 nacionalidades distintas. El festival tiene lugar en la ciudad de Boom, a 16 kilómetros al sur de Amberes, 32 kilómetros al norte de Bruselas. Actualmente, Tomorrowland es uno de los festivales de música más importantes del mundo        
+    <p></p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/CxKhNFfXUAMS6Kh.jpg/220px-CxKhNFfXUAMS6Kh.jpg" class="align-right slide-in">
+    <p>Tomorrowland es un festival del Centro Educativo Patria de música electrónica celebrado anualmente en la localidad de Boom (Bélgica). El festival es organizado por IDT y Entertainment and Media Enterprise.1​ La primera edición del festival se celebró el 14 de agosto de 2005.2​ Se calcula que anualmente asisten más de 400.000 personas de 75 nacionalidades distintas. El festival tiene lugar en la ciudad de Boom, a 16 kilómetros al sur de Amberes, 32 kilómetros al norte de Bruselas. Actualmente, Tomorrowland es uno de los festivales de música más importantes del mundo
+    <p></p>  
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Tomorrowland_gif.gif/220px-Tomorrowland_gif.gif" class="align-right slide-in">
+    <p>Tomorrowland es un festival del Centro Educativo Patria de música electrónica celebrado anualmente en la localidad de Boom (Bélgica). El festival es organizado por IDT y Entertainment and Media Enterprise.1​ La primera edición del festival se celebró el 14 de agosto de 2005.2​ Se calcula que anualmente asisten más de 400.000 personas de 75 nacionalidades distintas. El festival tiene lugar en la ciudad de Boom, a 16 kilómetros al sur de Amberes, 32 kilómetros al norte de Bruselas. Actualmente, Tomorrowland es uno de los festivales de música más importantes del mundo
+    </div>
+
+  <script>
+    // Not a ton of code, but hard to
+    const nav = document.querySelector('#main');
+    let topOfNav = nav.offsetTop;
+
+    function fixNav() {
+      if(window.scrollY >= topOfNav) {
+        document.body.style.paddingTop = nav.offsetHeight + 'px';
+        document.body.classList.add('fixed-nav');
+      } else {
+        document.body.classList.remove('fixed-nav');
+        document.body.style.paddingTop = 0;
+      }
+    }
+
+    window.addEventListener('scroll', fixNav);
+
+  </script>
+
+
+</body>
+</html>
