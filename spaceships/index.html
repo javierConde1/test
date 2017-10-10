@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Space chips</title>
+    <style>
+        canvas {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background: transparent;
+        }
+
+        #background {
+            z-index: -2;
+        }
+
+        #main {
+            z-index: -1;
+        }
+
+        #ship {
+            z-index: 0;
+        }
+
+        .score {
+            position: absolute;
+            top: 5px;
+            left: 480px;
+            color: ghostwhite;
+            font-family: Helvetica, sans-serif;
+            cursor: default;
+        }
+
+        .game-over {
+            position: absolute;
+            top: 100px;
+            left: 210px;
+            color: ghostwhite;
+            font-family: Helvetica, sans-serif;
+            font-size: 30px;
+            cursor: default;
+            display: none;
+        }
+
+        .game-over span {
+            font-size: 20px;
+            cursor: pointer;
+            position: relative;
+            left: 50px;
+        }
+
+        .game-over span:hover {
+            color: ghostwhite;
+        }
+
+        .loading {
+            position: absolute;
+            top: 100px;
+            left: 210px;
+            color: ghostwhite;
+            font-family: Helvetica, sans-serif;
+            font-size: 50px;
+            cursor: default;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="background" width="600" height="650">
+    </canvas>
+    <canvas id="main" width="600" height="600">
+    </canvas>
+    <canvas id="ship" width="600" height="650">
+    </canvas>
+    <div class="score">Puntos: <span id="score"></span></div>
+    <div class="game-over" id="game-over">FIN DEL JUEGO
+        <p><span onclick="game.restart()">Renaudar</span></p>
+    </div>
+    <div class="loading" id="loading">Cargando...
+        <p>Please wait</p>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
