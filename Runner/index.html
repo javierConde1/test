@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mario Bross pirata</title>
+  <link rel="stylesheet" href="kandi.css" type="text/css" media="screen">
+  <script type="text/javascript" src="jquery.2.1.1.min.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="sound sound-off"></div>
+    <div id="menu">
+      <div id="progress">
+        <div id="percent">Descargar: <span id="p"></span></div>
+        <progress id="progress-bar" value="0"></progress>
+      </div>
+      <div id="main">
+        <h1>Imitacion Mario Bross</h1>
+        <ul>
+          <li><a href="javascript:void(0)" class="button play">Iniciar</a></li>
+        </ul>
+      </div>
+    </div>
+    <canvas id="canvas" width="800" height="480">
+    </canvas>
+    <div id="game-over">
+      <h2>Tu corriste... <span id="score"></span> metros!</h2>
+      <a href="javascript:void(0)" class="button restart">De nuevo!</a>
+    </div>
+  </div>
+  <script type="text/javascript" src="kandi.js"></script>
+</body>
+
+</html>
