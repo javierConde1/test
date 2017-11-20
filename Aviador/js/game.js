@@ -477,22 +477,14 @@ Sea = function(){
                      speed:game.wavesMinSpeed + Math.random()*(game.wavesMaxSpeed - game.wavesMinSpeed)
                     });
   };
-    //Cambiar de textura
-let changeTexture = 0;
-document.body.onkeypress = function(){ // Detecta si se preciona una tecla
-    if(changeTexture % 2 == 0){// La funcion se inicializa que obtiene el mod para cambiar entre varias
-                                //texturas
-        texture = new THREE.TextureLoader().load('img/Star.jpg');
-    }else{
-        texture = new THREE.TextureLoader().load('img/asteroid.jpg');
-    }
-    //Los materiales se alternan al precionar una tecla y se vuelve a cargar las primitivas
-    geom.mat = new THREE.MeshBasicMaterial({map:texture});
-    changeTexture += 1; // Se aumenta en uno para que se alterne.
-}
+  var texture = new THREE.TextureLoader().load( "img/sun.jpg" );
+  var mat = new THREE.MeshPhongMaterial({
+    map:texture,
+    transparent:true,
+    opacity:.8,
+    shading:THREE.FlatShading,
 
-
-  ;
+  });
 
   this.mesh = new THREE.Mesh(geom, mat);
   this.mesh.name = "waves";
